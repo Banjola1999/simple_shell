@@ -10,17 +10,17 @@
  */
 void _free(char **buf)
 {
-        int i;
+int i;
 
-        if (buf == NULL || *buf == NULL)
-        {
-                return;
-        }
+if (buf == NULL || *buf == NULL)
+{
+return;
+}
 
-        for (i = 0; buf[i] != NULL; i++)
-        {
-                free(buf[i]);
-                buf[i] = NULL;
-        }
-        free(buf);
+for (i = 0; buf[i] != NULL; i++)
+{
+free(buf[i]);
+buf[i] = NULL;
+}
+free(buf);
 }
