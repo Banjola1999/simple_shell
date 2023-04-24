@@ -18,7 +18,7 @@ void exec(char *cp, char **cmd)
 
 	if (child_pid < 0)
 		perror(cp);
-	
+
 	if (child_pid == 0)
 	{
 		if (execve(cp, cmd, env) == -1)

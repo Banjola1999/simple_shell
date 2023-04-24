@@ -10,16 +10,17 @@
 int checker(char **cmd, char *buf)
 {
     /* check if the command is a built-in function */
-    if (builtins(cmd, buf)) {
-        return 1;
-    }
+	if (builtins(cmd, buf))
+	{
+	return (1);
+	}
 
     /* if it's not a built-in, check if it's an executable file */
-    if (access(cmd[0], X_OK) == 0)
-    {
-        exec(cmd[0], cmd);
-        return 1;
-    }
+	if (access(cmd[0], X_OK) == 0)
+	{
+	exec(cmd[0], cmd);
+	return (1);
+	}
 
-    return 0;
+	return (0);
 }

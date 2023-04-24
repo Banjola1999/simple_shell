@@ -10,25 +10,25 @@
  */
 char *add_path(char *path, char *command)
 {
-        size_t path_len, cmd_len;
-        char *buf;
+	size_t path_len, cmd_len;
+	char *buf;
 
-        if (path == NULL || command == NULL)
-                return (NULL);
+	if (path == NULL || command == NULL)
+		return (NULL);
 
-        path_len = strlen(path);
-        cmd_len = strlen(command);
+	path_len = strlen(path);
+	cmd_len = strlen(command);
 
-        buf = malloc(sizeof(char) * (path_len + cmd_len + 2));
-        if (buf == NULL)
-                return (NULL);
+	buf = malloc(sizeof(char) * (path_len + cmd_len + 2));
+	if (buf == NULL)
+		return (NULL);
 
-        strcpy(buf, path);
+	strcpy(buf, path);
 
-        if (path[path_len - 1] != '/')
-                strcat(buf, "/");
+	if (path[path_len - 1] != '/')
+		strcat(buf, "/");
 
-        strcat(buf, command);
+	strcat(buf, command);
 
-        return (buf);
+	return (buf);
 }

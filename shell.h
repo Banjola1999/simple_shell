@@ -24,27 +24,45 @@
 extern char *previous_command;
 void handle_up_arrow(int sig);
 
-/* Define the "builtin" struct to store environment and exit commands */
+/**
+ * struct builtin - contains information about built-in commands
+ * @env: pointer to the environment command
+ * @exit: pointer to the exit command
+ *
+ * Description: This struct contains information about built-in commands
+ */
 struct builtin
 {
-        char *env;
-        char *exit;
+	char *env;
+	char *exit;
 } builtin;
 
 /* Function Prototypes */
 void prompt(void);
 
-/* Define the "info" struct to store final exit status and line count */
+
+/**
+ * struct info - contains information about program execution
+ * @final_exit: integer value of program exit status
+ * @ln_count: integer value of line count
+ *
+ * Description: This struct contains information about program execution
+ */
 struct info
 {
-        int final_exit;
-        int ln_count;
+	int final_exit;
+	int ln_count;
 } info;
 
-/* Define the "flags" struct to store interactive flag */
+/**
+ * struct flags - contains flags for the program
+ * @interactive: boolean value for interactive mode
+ *
+ * Description: This struct contains flags for the program
+ */
 struct flags
 {
-        bool interactive;
+	bool interactive;
 } flags;
 
 /* Declare external environment variable and signal handler function */
