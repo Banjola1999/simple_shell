@@ -9,7 +9,8 @@
  */
 char *_strdup(char *s)
 {
-char *ptr
+ohar *ptr
+	t@3a10edf9711a:~/simple_shell# vi 
 size_t len;
 
 if (s == NULL)
