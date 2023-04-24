@@ -19,7 +19,7 @@ return (0);
 /* If the characters match, recurse on the next characters */
 else if (*s1 == *s2)
 {
-return _strcmp(s1 + 1, s2 + 1);
+return (_strcmp(s1 + 1, s2 + 1));
 }
 /* The characters don't match, so return the difference between them */
 else
