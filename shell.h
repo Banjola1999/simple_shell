@@ -75,6 +75,11 @@ void prompt(void);
 /*free dynamically allocated array */
 void free_arr(char **arr);
 
+char *prompt_and_read_input(void);
+void execute_command(char *command);
+
+/*shell loop*/
+void shell_loop(void);
 /* Function to exit the shell program */
 void _exit_(char **command, char *line);
 

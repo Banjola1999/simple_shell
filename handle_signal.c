@@ -5,7 +5,7 @@
  *
  * @sig: The signal received.
  */
-void handle_up_arrow(int sig)
+/*void handle_up_arrow(int sig)
 {
 int i = 0;
 char c;
@@ -19,10 +19,10 @@ new = old;
 new.c_lflag &= ~(ICANON | ECHO);
 tcsetattr(STDIN_FILENO, TCSANOW, &new);
 
-/* Read characters until we reach a newline or the buffer is full. */
+
 while ((c = getchar()) != '\n' && c != EOF && i < MAX_CMD_LENGTH - 1)
 {
-if (c == 127 || c == '\b') /* Handle backspace. */
+if (c == 127 || c == '\b')
 {
 if (i > 0)
 {
@@ -37,10 +37,9 @@ putchar(c);
 }
 }
 
-/* Copy the buffer to the `previous_command` variable. */
 free(previous_command);
 previous_command = strdup(buf);
 
 tcsetattr(STDIN_FILENO, TCSANOW, &old);
 }
-}
+}*/
