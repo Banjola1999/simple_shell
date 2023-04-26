@@ -5,7 +5,7 @@
  *
  * @sig: The signal received.
  */
-/*void handle_up_arrow(int sig)
+void handle_up_arrow(int sig)
 {
 int i = 0;
 char c;
@@ -42,4 +42,4 @@ previous_command = strdup(buf);
 
 tcsetattr(STDIN_FILENO, TCSANOW, &old);
 }
-}*/
+}
