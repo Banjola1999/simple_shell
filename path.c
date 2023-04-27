@@ -1,27 +1,24 @@
 #include "shell.h"
 
 /**
-* find_path - finds the path from the global enviroment
-* Return: NULL if path is not found or path if path is found.
-*/
-char *find_path(void)
+ * Path - finds the PATH environment variable in the global environment
+ *
+ * Return: a pointer to the path string if found, NULL otherwise
+ */
+char *Path(void)
 {
-	int x;
-	char **env = environ, *path = NULL;
+char **env = environ;
+char *path = NULL;
+int i;
 
-	while (*env)
-	{
-		if (_strncmp(*env, "PATH=", 5) == 0)
-		{
-			path = *env;
-			while (*path && x < 5)
-			{
-				path++;
-				x++;
-			}
-			return (path);
-		}
-		env++;
-	}
-	return (NULL);
+for (i = 0; env[i] != NULL; i++)
+{
+if (string_bytes(env[i], "PATH=", 5) == 0)
+{
+path = env[i] + 5;
+return (path);
+}
+}
+
+return (NULL);
 }

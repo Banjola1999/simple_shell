@@ -5,7 +5,7 @@
 * @av: argument vector
 * @envp: environment vector
 *
-* Return: 0
+* Return: 0 (Success)
 */
 
 int main(int ac, char **av, char *envp[])
@@ -14,20 +14,22 @@ int main(int ac, char **av, char *envp[])
 	size_t bufsize = 0;
 	ssize_t linesize = 0;
 	char **command = NULL, **paths = NULL;
+	/*char *args[] = {"cd", "/path/to/dir", NULL};*/
 	(void)envp, (void)av;
+
 	if (ac < 1)
 		return (-1);
-	signal(SIGINT, handle_signal);
-	while (1)
+	signal(SIGINT, _signal);
+	while (true)
 	{
-		free_buffers(command);
-		free_buffers(paths);
+		free_buf(command);
+		free_buf(paths);
 		free(pathcommand);
-		prompt_user();
+		user();
 		linesize = getline(&line, &bufsize, stdin);
 		if (linesize < 0)
 			break;
-		info.ln_count++;
+		info._count++;
 		if (line[linesize - 1] == '\n')
 			line[linesize - 1] = '\0';
 		command = tokenizer(line);
@@ -35,15 +37,15 @@ int main(int ac, char **av, char *envp[])
 			continue;
 		if (checker(command, line))
 			continue;
-		path = find_path();
+		path = Path();
 		paths = tokenizer(path);
-		pathcommand = test_path(paths, command[0]);
+		pathcommand = path_check(paths, command[0]);
 		if (!pathcommand)
 			perror(av[0]);
 		else
-			execution(pathcommand, command);
+			exec(pathcommand, command);
 	}
-	if (linesize < 0 && flags.interactive)
+	if (linesize < 0 && flags.run)
 		write(STDERR_FILENO, "\n", 1);
 	free(line);
 	return (0);

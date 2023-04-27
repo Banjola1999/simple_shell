@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * execution - executes commands entered by users
+ * exec - executes commands entered by users
  *@cp: command
- *@cmd:vector array of pointers to commands
- * Return: 0
+ *@cmd: array of pointers to commands
+ * Return: 0 (Success)
  */
-void execution(char *cp, char **cmd)
+void exec(char *cp, char **cmd)
 {
 	pid_t child_pid;
 	int status;
@@ -20,7 +20,7 @@ void execution(char *cp, char **cmd)
 		execve(cp, cmd, env);
 		perror(cp);
 		free(cp);
-		free_buffers(cmd);
+		free_buf(cmd);
 		exit(98);
 	}
 	else

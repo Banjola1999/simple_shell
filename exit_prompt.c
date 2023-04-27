@@ -1,15 +1,15 @@
 #include "shell.h"
 
 /**
-* exit_cmd - handles the exit command
+* exit_prompt - handles the exit command
 * @command: tokenized command
 * @line: input read from stdin
 *
 * Return: no return
 */
-void exit_cmd(char **command, char *line)
+void exit_prompt(char **command, char *line)
 {
+	free_buf(command);
 	free(line);
-	free_buffers(command);
 	exit(0);
 }
