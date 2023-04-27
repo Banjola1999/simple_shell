@@ -8,14 +8,14 @@
 *
 * Return: 0 (Success)
 */
-int main(int ac, char **av)
+int main(int ac, char **av, char *envp[])
 {
 char *line = NULL, *pathcommand = NULL, *path = NULL;
 size_t bufsize = 0;
 ssize_t linesize = 0;
 char **command = NULL, **paths = NULL;
 /*char *args[] = {"cd", "/path/to/dir", NULL};*/
-(void)av;
+(void)av, (void)envp;
 
 if (ac < 1)
 return (-1);
