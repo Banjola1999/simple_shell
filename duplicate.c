@@ -2,25 +2,25 @@
 
 /**
 * duplicate - dupicates string
-* @s: string
+* @str: string
 *
 * Return: pointer to string
 */
-char *duplicate(char *s)
+char *duplicate(char *str)
 {
 	char *ptr;
 	int i, len;
 
-	if (s == NULL)
+	if (str == NULL)
 		return (NULL);
 
-	len = string_length(s);
+	len = string_length(str);
 
 	ptr = malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);
-	for (i = 0; *s != '\0'; s++, i++)
-		ptr[i] = s[0];
+	for (i = 0; *str != '\0'; str++, i++)
+		ptr[i] = str[0];
 
 	ptr[i++] = '\0';
 	return (ptr);

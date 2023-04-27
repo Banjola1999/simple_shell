@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * checker - checks if a command is a built-in function or not
- * @cmd: tokenized user input
- * @buf: line from getline function
- * Return: 1 if command executed, 0 if not
+ * checker - checks if a command is a built_in or not built_in
+ * @cmd: tokenized input
+ * @buf: getline line
+ * Return: 1 (Success), 0 (Unsuccessful)
  */
 int checker(char **cmd, char *buf)
 {

@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- *_signal- it keeps track is interactive mode
+ *_signal- prompt signal
  *@index: signal index
  *Return: void
  */
@@ -10,5 +10,5 @@ void _signal(int index)
 {
 	(void)index;
 
-	write(STDERR_FILENO, "\n:) $ ", 3);
+	write(STDERR_FILENO, "\n$ ", 3);
 }

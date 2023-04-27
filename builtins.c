@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * builtins - handles execution of builtin functions
- * @command: tokenized commands
- * @line: input read from stdin
+ * builtins - deals with built_in commands
+ * @command: commands tokenized
+ * @line: input command
  *
- * Return: 1 if executed, 0 if not
+ * Return: 1 (Success)
  */
 int builtins(char **command, char *line)
 {

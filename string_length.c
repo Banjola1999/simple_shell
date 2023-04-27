@@ -4,7 +4,7 @@
 * string_length - returns the length of a string
 * @s: string passed
 *
-* Return: returns length of string passed
+* Return: length of string
 */
 int string_length(char *s)
 {

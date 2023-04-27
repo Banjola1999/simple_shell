@@ -2,19 +2,19 @@
 
 /**
 * compare - compares two strings
-* @s1: string 1
-* @s2: string 2
+* @str1: string one
+* @str2: string two
 *
 * Return: returns difference s1 and s2
 */
-int compare(char *s1, char *s2)
+int compare(char *str1, char *str2)
 {
 	int i = 0, diff;
 
-	while (*(s1 + i) == *(s2 + i) && *(s1 + i) != '\0')
+	while (*(str1 + i) == *(str2 + i) && *(str1 + i) != '\0')
 		i++;
 
-	diff = (*(s1 + i) - *(s2 + i));
+	diff = (*(str1 + i) - *(str2 + i));
 
 	return (diff);
 }

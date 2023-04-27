@@ -1,10 +1,8 @@
 #include "shell.h"
 
 /**
-* user - prints $ to let user know the program is
-* ready to take their input
-* prints the prompt if the shell is in interactive mode
-* Return: no return
+* user - prints $ that indacates that shell has ran successfully
+* Return: void
 */
 void user(void)
 {
